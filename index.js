@@ -33,6 +33,8 @@ app.use('/auth', AuthRouter);
 app.use('/api', RoleRouter);
 app.use('/admin', AdminRouter);
 app.use('/api/employee', employeeRouter)
+
+
 app.listen(PORT, () => {
     console.log(`server is running on ${PORT} port `);
 })
