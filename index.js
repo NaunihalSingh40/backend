@@ -16,6 +16,16 @@ app.get('/ping', (req, res) => {
     res.send('PONG');
 })
 
+
+app.use(async (req, res, next) => {
+    const token = req.headers['authorization']?.split(' ')[1];
+
+    if (token) {
+        const decoded = jwt.verify(token, process.env.jwt_secret);
+        req.user = decoded;
+    }
+    next();
+})
 app.use(bodyParser.json());
 app.use(cors());
 app.use('/auth', AuthRouter);
