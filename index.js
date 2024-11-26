@@ -6,10 +6,11 @@ const cors = require('cors');
 const RoleRouter = require('./routes/RoleRouter');
 const app= express();
 require('dotenv').config();
-require('./models/db');
-
+// require('./models/db');
+const connectDB = require('./models/db')
 const PORT = process.env.port || 8080;
 
+connectDB();
 app.get('/ping', (req,res)=>{
     res.send('PONG');
 })

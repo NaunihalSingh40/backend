@@ -10,5 +10,4 @@ const LeaveSchema = new mongoose.Schema({
   status: { type: String, default: "New", required: true },
 });
 
-const leavesModal = mongoose.model('Leave', LeaveSchema);
-module.exports = leavesModal;
+module.exports = mongoose.model('Leave', LeaveSchema);
