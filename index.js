@@ -5,6 +5,8 @@ const AdminRouter = require('./routes/AdminRouter');
 const cors = require('cors');
 const RoleRouter = require('./routes/RoleRouter');
 const employeeRouter = require('./routes/employeeRoutes')
+const holidayRouter = require('./routes/holidaysRouter')
+const clientRouter = require('./routes/clientRoute')
 const app = express();
 require('dotenv').config();
 // require('./models/db');
@@ -33,6 +35,8 @@ app.use('/auth', AuthRouter);
 app.use('/api', RoleRouter);
 app.use('/admin', AdminRouter);
 app.use('/api/employee', employeeRouter)
+app.use('/api/holiday', holidayRouter)
+app.use('/api/client', clientRouter)
 
 
 app.listen(PORT, () => {
