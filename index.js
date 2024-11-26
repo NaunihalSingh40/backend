@@ -30,7 +30,7 @@ app.use(async (req, res, next) => {
 app.use(bodyParser.json());
 app.use(cors());
 app.use('/auth', AuthRouter);
-app.use('/api', RoleRouter);
+// app.use('/api', RoleRouter);
 app.use('/api/admin', AdminRouter);
 app.use('/api/employee', employeeRouter)
 app.listen(PORT, () => {
